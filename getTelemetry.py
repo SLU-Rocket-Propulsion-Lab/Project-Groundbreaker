@@ -5,7 +5,6 @@ import adafruit_rfm9x
 import time
 import csv
 
-mylcd = RPi_I2C_driver.lcd()
 spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 
 cs = digitalio.DigitalInOut(board.CE1)
