@@ -14,7 +14,8 @@ rfm9x = adafruit_rfm9x.RFM9x(spi, cs, reset, 433.0)
 
 lastReceive = 0
 f = open("TELEMETRY.csv", "w+")
-csv.writer(f).writerow(["time", "accel_x", "accel_y", "accel_z", "mag_x", "mag_y", "mag_z", "gyro_x", "gyro_y", "gyro_z", "temp", "humidity", "pressure", "altitude", "fix_q", "sat", "lat", "long", "gps_alt", "gps_speed", "telem_signal"])
+
+csv.writer(f).writerow(["time", "accel_x", "accel_y", "accel_z", "mag_x", "mag_y", "mag_z", "gyro_x", "gyro_y", "gyro_z", "temp", "humidity", "pressure", "altitude", "fix_q", "sat", "lat", "long", "gps_alt", "gps_speed", "telem_signal", "event_bool", "roll", "pitch", "yaw"])
 f.close()
 while True:
     with open('TELEMETRY.csv','a') as f1:

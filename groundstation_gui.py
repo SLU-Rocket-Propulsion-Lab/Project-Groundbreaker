@@ -255,6 +255,11 @@ def getTelemetry(packet, lastReceive):
     gps_altitude.value = packet['gps_alt']
     gps_velocity.value = packet['gps_speed']
     
+    event_bool.value = packet['event_bool']
+    roll.value = packet['roll']
+    pitch.value = packet['pitch']
+    yaw.value = packet['yaw']
+
 def showPlots(telemetry):
     if len(telemetry) > 2:
         altitude_plot.set_ylim((min(telemetry['telem_signal'])-.1,max(telemetry['telem_signal'])+.1))
@@ -418,6 +423,11 @@ gps_fix_quality = Data(0)
 gps_altitude = Data(0)
 gps_velocity = Data(0)
 gps_satellites = Data(0)
+
+event_bool = Data(0)
+roll = Data(0)
+pitch = Data(0)
+yaw = Data(0)
 
 drogue = Data("Stowed")
 main = Data("Stowed")
